@@ -1,3 +1,8 @@
 #!/bin/bash
+
+# kill them all
+killall cog
+
+# phoenix rising
 cog --user-agent="${WPE_USER_AGENT}" $@
 
