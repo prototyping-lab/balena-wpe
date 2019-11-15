@@ -7,13 +7,23 @@ accelerated CSS, WebGL, and HTML5 video.
 
 ## Improvements
 
-The `timezone` branch provides a `TIMEZONE` environment variable to change the local timezone. This is useful for webkit-clocks.
-
-## Environment Variables
+- The `timezone` branch:
+	- provides a `TIMEZONE` environment variable to change the local timezone.  
+	This is very useful for displaying live clocks on screen 🕰.
+	- You can set a custom user-agent string via `WPE_USER_AGENT`
+ 
+## Time Zones
 
 - `TIMEZONE` defaults to `Europe/Berlin`
 - See `/usr/share/zoneinfo/` inside the WPE-Container for available timezones.
-- You can set `WPE_URL` to show a live clock such as <http://cubictime.ru/>
+
+
+## Show me the Clocks!
+- Set `WPE_URL` to show a live clock such as <http://cubictime.ru/>
+- Tohora runs on port 8080 to let you remotely update the broweser
+- Here is an extensive list of [43 CSS Clocks](https://freefrontend.com/css-clocks/) showcased on CodePen
+-  To prevent CodePen from blocking WPE Webkit, you may need to set a custom user agent string as discussed [here](https://meta.discourse.org/t/embedding-pens-from-codepen/13578)
+
 
 ## Deployment
 
