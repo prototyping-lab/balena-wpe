@@ -22,8 +22,14 @@ export XDG_RUNTIME_DIR=/tmp/balena/xdg_runtime
 # Enable touch screen
 export WPE_BCMRPI_TOUCH=1
 
-# Start browser
-cog $WPE_URL &
+# Set user-agent string via the WPE_USER_AGENT environment var
+DEFAULT_WPE_USER_AGENT="Mozilla/5.0 (X11;Linux; armV7l) AppleWebKit/601.1i.15 (KHTML, like Gecko) Version/11.0 Safari/605.1.15"
+export WPE_USER_AGENT="${WPE_USER_AGENT:-${DEFAULT_WPE_USER_AGENT}}"
+                         
+# Start browser - with a custom user-agent string
+# (For more settings run run cog --help or cog --help-websettings)
+cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}" &
 
-# Start Tohora
-./tohora 8080 cog
+# Start Tohora to control the browser
+./tohora 8080 cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}"
+
