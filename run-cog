@@ -1,8 +1,17 @@
 #!/bin/bash
 
-# kill them all
-killall cog
+# start new process
+cog --user-agent="${WPE_USER_AGENT}" $@ &
 
-# phoenix rising
-cog --user-agent="${WPE_USER_AGENT}" $@
+# find previous cog-processes
+OLD_COGS=$(ps | cut -b0-5,25-29  | grep cog | egrep -v "$!" | cut -b0-5 | xargs)
+
+# give the new browser some time to start up
+sleep 2
+
+echo "Killing old browsers: $OLD_COGS"
+for cog in $OLD_COGS
+do
+        kill $cog
+done
 
