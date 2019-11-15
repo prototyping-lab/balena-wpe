@@ -11,8 +11,8 @@ RUN chmod +x /timezone-init
 COPY init /init
 RUN chmod +x /init
 
-COPY run-cog /run-cog
-RUN chmod +x /run-cog
+COPY run-cog /usr/bin/run-cog
+RUN chmod +x /usr/bin/run-cog
 
 CMD [ "/init" ]
 
