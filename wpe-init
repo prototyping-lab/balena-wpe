@@ -31,5 +31,5 @@ export WPE_USER_AGENT="${WPE_USER_AGENT:-${DEFAULT_WPE_USER_AGENT}}"
 cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}" &
 
 # Start Tohora to control the browser
-./tohora 8080 cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}"
+./tohora 8080 "cog ${WPE_URL} --user-agent='${WPE_USER_AGENT}'"
 
