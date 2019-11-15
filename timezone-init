@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Default to Europe/Berlin if no TIMEZONE env variable is set
+echo "Setting time zone to ${TIMEZONE=Europe/Berlin}"
+
+# This works only on Yocto-based images (!)
+ln -sf "/usr/share/zoneinfo/${TIMEZONE}" /etc/localtime
+
