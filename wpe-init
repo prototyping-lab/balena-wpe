@@ -28,7 +28,7 @@ export WPE_USER_AGENT="${WPE_USER_AGENT:-${DEFAULT_WPE_USER_AGENT}}"
                          
 # Start browser with a custom user-agent string
 # (For more settings run run cog --help or cog --help-websettings)
-run-cog &
+run-cog $WPE_URL &
 
 # Start Tohora to control the browser
 ./tohora 8080 run-cog
