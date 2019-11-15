@@ -5,6 +5,26 @@ Webkit](https://www.igalia.com/wpe/) for the RaspberryPi. WPEWebkit is a full
 featured browser that takes advantage of the GPU to provide hardware
 accelerated CSS, WebGL, and HTML5 video.
 
+## Improvements
+
+The `timezone` branch provides a `TIMEZONE` environment variable to change the local timezone. This is useful for webkit-clocks.
+
+## Environment Variables
+
+- `TIMEZONE` defaults to `Europe/Berlin`
+- See `/usr/share/zoneinfo/` inside the WPE-Container for available timezones.
+- You can set `WPE_URL` to show a live clock such as <http://cubictime.ru/>
+
+## Deployment
+
+1. Add balena remote
+
+		git remote add balena prototyping_lab@git.balena-cloud.com:prototyping_lab/wpe-webkit.git
+	
+2. Push timezone branch
+
+		git push balena timezone:master
+
 ## Showcase
 
 * Rendering WebGL [abstract shapes](https://mrdoob.neocities.org/023/)
