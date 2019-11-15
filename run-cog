@@ -1,0 +1,3 @@
+#!/bin/bash
+cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}"
+

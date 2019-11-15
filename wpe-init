@@ -26,10 +26,10 @@ export WPE_BCMRPI_TOUCH=1
 DEFAULT_WPE_USER_AGENT="Mozilla/5.0 (X11;Linux; armV7l) AppleWebKit/601.1i.15 (KHTML, like Gecko) Version/11.0 Safari/605.1.15"
 export WPE_USER_AGENT="${WPE_USER_AGENT:-${DEFAULT_WPE_USER_AGENT}}"
                          
-# Start browser - with a custom user-agent string
+# Start browser with a custom user-agent string
 # (For more settings run run cog --help or cog --help-websettings)
-cog ${WPE_URL} --user-agent="${WPE_USER_AGENT}" &
+./run-cog &
 
 # Start Tohora to control the browser
-./tohora 8080 "cog ${WPE_URL} --user-agent='${WPE_USER_AGENT}'"
+./tohora 8080 ./run-cog
 

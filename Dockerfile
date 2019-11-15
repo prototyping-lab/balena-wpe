@@ -11,6 +11,9 @@ RUN chmod +x /timezone-init
 COPY init /init
 RUN chmod +x /init
 
+COPY run-cog /run-cog
+RUN chmod +x /run-cog
+
 CMD [ "/init" ]
 
 ENV TOHORA_VERSION=0.3.2
